@@ -1,0 +1,14 @@
+MSARIMA Model Results for age_25_64 
+=====================================
+
+Best RMSE: 0.093035 
+Best Orders - AR: 0,1,0 
+Best Orders - I: 2,1,0 
+Best Orders - MA: 2,2,0 
+Data Length: 1482 
+Search Parameters:
+  Initial Orders - AR: 1,0,1 
+  Initial Orders - I: 1,1,0 
+  Initial Orders - MA: 1,0,1 
+  Perturbation: 2 
+  Iterations: 50 

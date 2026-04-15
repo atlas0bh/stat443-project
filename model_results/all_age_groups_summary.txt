@@ -1,0 +1,13 @@
+MSARIMA Model Selection Summary for All Age Groups
+==================================================
+
+Search Parameters:
+Perturbation: 2 
+Iterations: 50 
+
+Results Summary:
+age_65 :
+  Best RMSE: 0.107144 
+  Best Orders: ar=0,1,0; i=1,0,0; ma=0,1,0 
+  Data Points: 1482 
+
