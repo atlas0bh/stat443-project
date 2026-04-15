@@ -1,6 +1,7 @@
 library(forecast)
 source("./df.R")
-install.packages("languageserver")
+# install.packages("languageserver")
+library(languageserver)
 # we want to take an arima models
 plot(diff(train))
 model <- auto.arima(diff(train))
@@ -87,3 +88,15 @@ colnames(fourier_19_holdout) <- c("s1_19", "c1_19", "s2_19", "c2_19", "s1_52", "
 fc <- forecast(mod, xreg = fourier_19_holdout, h = length(holdout))
 plot(fc)
 sqrt(mean((holdout - fc$mean)^2))
+
+
+# TODO
+# ARIMA on single series
+
+# ARIMA on each series separately
+
+# Prediction of single series from the joint predictions.
+# How this will work is that since we have all the series and the forecasted values 
+# we will simply sum them to get back to the original series.
+# note since we actually have log(x+1) we must exponentiate each series and minus 1 from each and then add.
+# and then compare that to the holdout set of single series exponentiated and minus 1.

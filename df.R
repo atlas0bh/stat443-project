@@ -1,6 +1,6 @@
 df <- read.csv("data/fluview_clean/ilinet_final.csv")
 
-split_data <- function(df_column, frequency = 52, start = c(1979, 40), holdout_length = 104) {
+split_data <- function(df_column, frequency = 52, start = c(1997, 40), holdout_length = 104) {
   time_series_obj <- ts(df_column, frequency = frequency, start = start)
   n <- length(time_series_obj)
   return(list(
@@ -10,9 +10,11 @@ split_data <- function(df_column, frequency = 52, start = c(1979, 40), holdout_l
   ))
 }
 
+
 values <- split_data(log(df$percent_weighted_ili + 1) - mean(log(df$percent_weighted_ili + 1)))
 
-weeks <- split_data(df$week, frequency = 52, start = c(1979, 40), holdout_length = 104)
+
+weeks <- split_data(df$week, frequency = 52, start = c(1997, 40), holdout_length = 104)
 
 week_train <- rep(1:12, 18)
 week_holdout <- rep(1:12, 5)

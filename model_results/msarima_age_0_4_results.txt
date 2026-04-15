@@ -11,4 +11,4 @@ Search Parameters:
   Initial Orders - I: 1,1,0 
   Initial Orders - MA: 1,0,1 
   Perturbation: 2 
-  Iterations: 50 
+  Iterations: 5 
