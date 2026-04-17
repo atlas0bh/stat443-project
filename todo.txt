@@ -1,0 +1,12 @@
+TODO
+
+[] Implement ARMAX on age_5_24
+[] We want to show the diagnostic plots for msarima on single plot
+[] We want to plot all of the ms arimas against each other
+[] we want to report the stl + ms arima 
+[] stl rmse (for single and multiple)
+
+
+[] stl and the stl + ms arima plot
+[] stl and the stl + ms arima rmse
+[] 

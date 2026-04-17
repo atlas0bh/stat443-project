@@ -1,12 +1,17 @@
 df <- read.csv("data/fluview_clean/ilinet_final.csv")
 
-split_data <- function(df_column, frequency = 52, start = c(1997, 40), holdout_length = 104) {
+split_data <- function(df_column, frequency = 52, start = c(1997, 40), holdout_length = 104,remove.missing=F) {
+
+  
   time_series_obj <- ts(df_column, frequency = frequency, start = start)
   n <- length(time_series_obj)
+  if(remove.missing) {
+    start <- c(2002,41)
+  }
   return(list(
     train = window(time_series_obj, start = start, end = time(time_series_obj)[n - holdout_length]),
     holdout = window(time_series_obj, start = time(time_series_obj)[n - holdout_length + 1], end = time(time_series_obj)[n]),
-    ts_obj = time_series_obj
+    ts_obj = window(time_series_obj, start = start)
   ))
 }
 
